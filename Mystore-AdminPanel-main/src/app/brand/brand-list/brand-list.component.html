@@ -1,0 +1,30 @@
+<h3 class="header">Brand List</h3>
+<div class="container">
+  <button (click)="onAdd()" class="btn btn-info float-end add">Add</button>
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <th>No.</th>
+      <th>Title</th>
+      <th>Description</th>
+      <th style="width: 140px">Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ brand["title"] }}</td>
+        <td>{{ brand["description"] }}</td>
+        <td>
+          <button (click)="onEdit(brand)" class="btn btn-sm btn-warning">
+            Edit
+          </button>
+          <button
+            (click)="onDelete(brand['id'])"
+            class="btn btn-sm btn-danger delete"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

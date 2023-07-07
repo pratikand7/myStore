@@ -1,0 +1,49 @@
+.btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: rgb(0, 255, 247);
+}
+.btn {
+  color: rgb(255, 255, 255);
+}
+.navbar-brand {
+  font-weight: 700;
+  margin-right: 50px;
+}
+.nav-link {
+  margin-right: 30px;
+  padding: 5px;
+  border: rgb(74, 1, 0) 1px solid;
+  border-radius: 8px;
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
+  width: 80px;
+  text-align: center;
+}
+
+.nav-link:hover {
+  color: rgb(0, 255, 234);
+  border-color: crimson;
+}
+
+#dropdownBasic1 {
+  color: aqua;
+  background-color: black;
+}
+
+#dropdownBasic1:hover {
+  color: crimson;
+}
+
+#login {
+  width: 80px;
+  background-color: rgb(171, 255, 232);
+  border: 2px solid black;
+  color: black;
+  font-weight: 500;
+  margin-right: 20px;
+}
+
+#login:hover {
+  background-color: black;
+  color: crimson;
+}

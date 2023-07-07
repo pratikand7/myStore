@@ -1,0 +1,29 @@
+<div class="modal-header">
+  <h3 class="header">Edit Brand</h3>
+</div>
+<div class="modal-body">
+  <div class="container">
+    <div class="form add-form">
+      <div class="form-group">
+        <div class="form-label">Title</div>
+        <input [(ngModel)]="title" type="text" class="form-control" />
+      </div>
+      <div class="form-group">
+        <div class="form-label">Description</div>
+        <textarea
+          [(ngModel)]="description"
+          class="form-control"
+          rows="10"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <div class="form-group">
+    <button (click)="onEdit()" class="btn btn-primary">Update</button>
+    <button (click)="onCancel()" class="btn btn-danger float-end">
+      Cancel
+    </button>
+  </div>
+</div>

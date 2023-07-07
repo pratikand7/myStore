@@ -1,0 +1,65 @@
+<h3 class="header">Cart Items</h3>
+<div class="container">
+  <h4 class="msg" *ngIf="carts.length == 0">
+    There are no products added to cart !
+  </h4>
+  <table
+    *ngIf="carts.length != 0"
+    class="table table-striped table-hover table-bordered"
+  >
+    <thead>
+      <th>No.</th>
+      <th>Thumbnail</th>
+      <th>Title</th>
+      <th>Brand</th>
+      <th>Category</th>
+      <th style="width: 120px">Quantity</th>
+      <th>Price</th>
+      <th>Total Price</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cart of carts; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>
+          <img
+            class="cart-image"
+            src="http://localhost:7100/cart/image/{{ cart['imageFile'] }}"
+          />
+        </td>
+        <td>{{ cart["productTitle"] }}</td>
+        <td>{{ cart["brandTitle"] }}</td>
+        <td>{{ cart["categoryTitle"] }}</td>
+        <td>
+          <button
+            (click)="decreaseQuantity(cart)"
+            class="btn btn-sm btn-danger delete"
+          >
+            -
+          </button>
+          <span class="quantity">{{ cart["quantity"] }}</span>
+          <button
+            (click)="increaseQuantity(cart)"
+            class="btn btn-sm btn-success"
+          >
+            +
+          </button>
+        </td>
+        <td>₹ {{ cart["price"] }}</td>
+        <td>₹ {{ cart["price"] * cart["quantity"] }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="cartPrice" colspan="7">Cart Total Price :</td>
+        <td style="font-weight: 700">₹ {{ totalPrice }}</td>
+      </tr>
+      <tr>
+        <td colspan="8">
+          <button (click)="placeOrder()" class="btn btn-info float-end place">
+            Place Order
+          </button>
+        </td>
+      </tr>
+    </tfoot>
+  </table>
+</div>

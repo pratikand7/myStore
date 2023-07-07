@@ -1,0 +1,15 @@
+button {
+  margin-top: 15px;
+  margin-left: 10px;
+}
+button:hover {
+  background: black;
+  color: aquamarine;
+  border: 1px solid crimson;
+}
+.add-form {
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px 8px #ccc;
+}

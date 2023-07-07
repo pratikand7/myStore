@@ -1,0 +1,55 @@
+<div class="modal-header">
+  <h3 class="header">Edit Address</h3>
+</div>
+<div class="modal-body">
+  <div class="form">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Title</div>
+          <input [(ngModel)]="title" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">PinCode</div>
+          <input [(ngModel)]="pinCode" type="text" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Line 1</div>
+          <input [(ngModel)]="line1" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Line 2</div>
+          <input [(ngModel)]="line2" type="text" class="form-control" />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">City</div>
+          <input [(ngModel)]="city" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">State</div>
+          <input [(ngModel)]="state" type="text" class="form-control" />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button (click)="onEdit()" class="btn btn-success">Update</button>
+  <button (click)="onCancel()" class="btn btn-danger">Cancel</button>
+</div>

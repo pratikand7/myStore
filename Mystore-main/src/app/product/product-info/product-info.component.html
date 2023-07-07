@@ -1,0 +1,67 @@
+<h3 class="header">Product Info</h3>
+
+<div class="container my-3">
+  <div class="row">
+    <div class="col-md-5">
+      <div class="main-img">
+        <img
+          src="http://localhost:7100/product/image/{{ product['imageFile'] }}"
+        />
+      </div>
+    </div>
+    <div class="col-md-7">
+      <div class="main-description px-2">
+        <div class="category text-bold">
+          Category: {{ product["categoryTitle"] }}
+        </div>
+        <div class="category text-bold">Brand: {{ product["brandTitle"] }}</div>
+        <div class="product-title text-bold my-3">{{ product["title"] }}</div>
+
+        <div class="price-area my-3">
+          <p class="new-price text-bold mb-1">₹ {{ product["price"] }}</p>
+        </div>
+        <div class="product-details my-3">
+          <p class="details-title text-color mb-1">Product Details</p>
+          <p class="description">{{ product["description"] }}</p>
+        </div>
+        <div class="form">
+          <div class="form-group">
+            <div class="form-label"><h5>Review</h5></div>
+            <textarea
+              [(ngModel)]="review"
+              rows="3"
+              class="form-control"
+            ></textarea>
+          </div>
+          <div class="form-group">
+            <ngb-rating
+              id="rating"
+              (hover)="rating = $event"
+              [max]="5"
+            ></ngb-rating>
+          </div>
+        </div>
+        <div class="buttons d-flex my-3">
+          <button (click)="addProductReview()" class="shadow btn custom-btn">
+            Submit
+          </button>
+        </div>
+      </div>
+      <hr />
+      <div class="product-reviews" *ngFor="let review of reviews">
+        <div class="form-group">
+          <ngb-rating
+            [rate]="review['rating']"
+            [readonly]="true"
+            [max]="5"
+          ></ngb-rating>
+        </div>
+        <div class="form-group">
+          <p>{{ review["review"] }}</p>
+          <p class="date">{{ review["createdOn"] }}</p>
+        </div>
+        <hr />
+      </div>
+    </div>
+  </div>
+</div>

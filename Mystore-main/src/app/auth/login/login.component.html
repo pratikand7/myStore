@@ -1,0 +1,23 @@
+<h3 class="header">MyStore Login</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+      <div class="form login">
+        <div class="form-group">
+          <div class="form-label">Email</div>
+          <input [(ngModel)]="email" type="email" class="form-control" />
+        </div>
+        <div class="form-group">
+          <div class="form-label">Password</div>
+          <input [(ngModel)]="password" type="password" class="form-control" />
+        </div>
+        <button (click)="onLogin()" class="btn btn-primary btn">Login</button>
+        <a routerLink="/auth/signup" class="btn btn-primary btn float-end"
+          >Signup</a
+        >
+      </div>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

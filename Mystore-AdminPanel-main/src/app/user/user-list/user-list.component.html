@@ -1,0 +1,38 @@
+<h3 class="header">User List</h3>
+<div class="container">
+  <table class="table table-striped table-hover table-bordered">
+    <thead>
+      <th>No.</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Mobile</th>
+      <th>Status</th>
+      <th style="width: 110px">Actions</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of users; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ user["firstName"] + " " + user["lastName"] }}</td>
+        <td>{{ user["email"] }}</td>
+        <td>{{ user["phone"] }}</td>
+        <td>{{ user["status"] }}</td>
+        <td>
+          <button
+            (click)="changeStatus(user)"
+            *ngIf="user['status'] == 1"
+            class="btn btn-sm btn-danger delete"
+          >
+            suspend
+          </button>
+          <button
+            (click)="changeStatus(user)"
+            *ngIf="user['status'] == 2"
+            class="btn btn-sm btn-success delete"
+          >
+            activate
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

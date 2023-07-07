@@ -1,0 +1,78 @@
+<div class="modal-header">
+  <h3 class="header">Edit Product</h3>
+</div>
+<div class="modal-body">
+  <div class="form add-form">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Title</div>
+          <input [(ngModel)]="title" type="text" class="form-control" />
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Price</div>
+          <input [(ngModel)]="price" type="number" class="form-control" />
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Category</div>
+          <select [(ngModel)]="categoryId" class="form-select">
+            <option
+              [value]="category['id']"
+              *ngFor="let category of categories"
+              class="form-control"
+            >
+              {{ category["title"] }}
+            </option>
+          </select>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Brand</div>
+          <select [(ngModel)]="brandId" class="form-select">
+            <option
+              [value]="brand['id']"
+              *ngFor="let brand of brands"
+              class="form-control"
+            >
+              {{ brand["title"] }}
+            </option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Description</div>
+          <textarea
+            [(ngModel)]="description"
+            rows="3"
+            class="form-control"
+          ></textarea>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <div class="form-label">Select Product Image</div>
+          <input
+            (change)="onImageUpload($event)"
+            type="file"
+            class="form-control"
+            accept="image/*"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal-footer">
+  <button (click)="onEdit()" class="btn btn-primary">Update</button>
+  <button (click)="onCancel()" class="btn btn-danger float-end">Cancel</button>
+</div>

@@ -1,0 +1,57 @@
+<h3 class="header">Products</h3>
+<div class="row">
+  <div class="col-md-2">
+    <div class="form">
+      <div class="form-group">
+        <div class="form-label">Category</div>
+        <select
+          (change)="filterProducts()"
+          (change)="getSpecificBrands()"
+          [(ngModel)]="categoryId"
+          class="form-select"
+        >
+          <option value="0">All</option>
+          <option *ngFor="let category of categories" [value]="category['id']">
+            {{ category["title"] }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <div class="form-label">Brand</div>
+        <select
+          (change)="filterProducts()"
+          [(ngModel)]="brandId"
+          class="form-select"
+        >
+          <option value="0">All</option>
+          <option [value]="brand['id']" *ngFor="let brand of brands">
+            {{ brand["title"] }}
+          </option>
+        </select>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-10">
+    <h4 *ngIf="products.length == 0">
+      There are no products matching this criteria !
+    </h4>
+    <div *ngIf="products.length != 0" class="row row-cols-1 row-cols-md-4 g-4">
+      <div class="col" *ngFor="let product of products">
+        <div class="product-card">
+          <img
+            src="http://localhost:7100/product/image/{{ product['imageFile'] }}"
+            alt="Product Name"
+            (click)="showProductInfo(product)"
+            class="product-image"
+          />
+          <h3 class="product-name">{{ product["title"] }}</h3>
+          <p class="product-description">{{ product["description"] }}</p>
+          <div class="product-price">₹ {{ product["price"] }}</div>
+          <button (click)="addToCart(product)" class="add-to-cart-button">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+.cart-image {
+  width: 80px;
+}
+.quantity {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 18px;
+}
+.cartPrice {
+  font-size: 17px;
+  font-weight: 500;
+  text-align: right;
+}
+.msg {
+  text-align: center;
+}
+.place:hover {
+  background: black;
+  color: aquamarine;
+  border: 1px solid crimson;
+}

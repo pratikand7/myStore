@@ -1,0 +1,15 @@
+button {
+    margin-top: 20px;
+    width: 80px;
+}
+button:hover {
+    background: black;
+    color: aquamarine;
+    border: 1px solid crimson;
+}
+.login {
+    border: 1px solid black;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px 8px #ccc;
+}
